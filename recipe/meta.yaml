@@ -1,5 +1,5 @@
 {% set name = "qforce" %}
-{% set version = "0.6.4" %}
+{% set version = "0.6.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/qforce-{{ version }}.tar.gz
-  sha256: 49460c8074d7c554c6b0b00326ded6cd3afdd262899442f4451f8cd9d57c081d
+  sha256: 255e3c58c33548802aae034b83b2ac53fa43c26edee634c21373efb55fc24368
 
 build:
   entry_points:
     - qforce=qforce.main:run
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
