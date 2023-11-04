@@ -13,25 +13,25 @@ build:
   entry_points:
     - qforce=qforce.main:run
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 1
 
 requirements:
   host:
-    - pip
     - python >=3.6
     - setuptools
+    - pip
   run:
-    - ase
-    - matplotlib-base
-    - networkx
-    - numba >=0.50
-    - numpy
-    - pulp <2.2
-    - pycolt >=0.5.3
     - python >=3.6
     - scipy
+    - numpy
+    - ase
+    - matplotlib-base
     - seaborn
+    - networkx
+    - pulp <2.2
+    - numba >=0.50
+    - pycolt >=0.5.3
 
 test:
   imports:
